@@ -1,0 +1,24 @@
+{
+  "name": "detective-engine",
+  "version": "1.0.0",
+  "description": "CASE//NULL - Digital Detective Investigation & Reasoning Engine",
+  "type": "module",
+  "main": "dist/index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc"
+  },
+  "keywords": ["detective", "investigation", "reasoning-engine", "typescript"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  }
+}
