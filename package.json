@@ -11,14 +11,25 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "typecheck": "tsc --noEmit",
-    "build": "tsc"
+    "build": "tsc",
+    "dev": "node --loader tsx --watch src/server.ts",
+    "start": "node dist/server.js"
   },
-  "keywords": ["detective", "investigation", "reasoning-engine", "typescript"],
+  "keywords": [
+    "detective",
+    "investigation",
+    "reasoning-engine",
+    "typescript"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
     "typescript": "^7.0.2",
     "vitest": "^5.0.5"
+  },
+  "dependencies": {
+    "fastify": "^5.12.7"
   }
 }
