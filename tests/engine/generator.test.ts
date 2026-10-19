@@ -49,6 +49,7 @@ describe("CaseGenerator", () => {
     expect(generatedCase.getAllLocations().length).toBeGreaterThanOrEqual(3);
     expect(generatedCase.getAllTimelineEvents().length).toBeGreaterThanOrEqual(9);
     expect(generatedCase.getAllEvidence().length).toBeGreaterThanOrEqual(8);
+    expect(generatedCase.getAllStatements()).toHaveLength(options.suspectCount);
     expect(generatedCase.getSuspect(truth.culpritId)).toBeDefined();
     expect(generatedCase.getVictim()?.id).toBe(truth.victimId);
     expect(generatedCase.getLocation(truth.locationId)).toBeDefined();

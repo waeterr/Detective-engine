@@ -9,6 +9,7 @@ import { SeededRandom } from "../../infrastructure/random.js";
 import { generateEvidence } from "./evidence.js";
 import { generateLocations } from "./locations.js";
 import { generatePeople } from "./people.js";
+import { generateStatements } from "./statements.js";
 import { generateTimeline } from "./timeline.js";
 import { generateTruth } from "./truth.js";
 
@@ -46,6 +47,11 @@ export class CaseGenerator {
       people.suspects.map((suspect) => suspect.id),
       locations.map((location) => location.id)
     );
+    const statements = generateStatements(
+      random,
+      truth,
+      people.suspects.map((suspect) => suspect.id)
+    );
 
     const brief: CaseBrief = {
       title: `${random.choice(["The Silent", "The Final", "The Broken", "The Last"])} ${random.choice(["Room", "Alibi", "Promise", "Signal"])}`,
@@ -74,6 +80,7 @@ export class CaseGenerator {
     people.witnesses.forEach((witness) => caseInstance.addWitness(witness));
     timeline.forEach((event) => caseInstance.addTimelineEvent(event));
     evidence.forEach((item) => caseInstance.addEvidence(item));
+    statements.forEach((statement) => caseInstance.addStatement(statement));
 
     return caseInstance;
   }
